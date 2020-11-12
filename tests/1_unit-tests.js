@@ -66,8 +66,8 @@ suite('Unit Tests', function(){
     });
     
     test('Unknown Unit Input', function(done) {
-      var unit = "N";
-      assert.equal(convertHandler.getUnit(unit), 'invalid unit');
+      var input = "32N";
+      assert.equal(convertHandler.getUnit(input), 'invalid unit');
       done();
     });  
     
