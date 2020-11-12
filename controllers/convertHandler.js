@@ -107,8 +107,24 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var result;
-    
-    return result;
+    if (initUnit === 'gal' || initUnit === 'GAL') {
+      result = (initNum * galToL).toFixed(5);
+    } else if (initUnit === 'l' || initUnit === 'L') {
+      result = (initNum / galToL).toFixed(5);
+    }
+
+    if (initUnit === 'lbs' || initUnit === 'LBS') {
+      result = (initNum * lbsToKg).toFixed(5);
+    } else if (initUnit === 'kg' || initUnit === 'KG') {
+      result = (initNum / lbsToKg).toFixed(5);
+    }
+
+    if (initUnit === 'mi' || initUnit === 'MI') {
+      result = (initNum * miToKm).toFixed(5);
+    } else if (initUnit === 'km' || initUnit === 'KM') {
+      result = (initNum / miToKm).toFixed(5);
+    }
+    return parseFloat(result);
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
