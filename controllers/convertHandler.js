@@ -25,7 +25,7 @@ function ConvertHandler() {
       }
       values[0] = parseFloat(values[0]);
       values[1] = parseFloat(values[1]);
-      result = parseFloat(values[0]/values[1].toFixed(5));
+      result = parseFloat((values[0]/values[1]).toFixed(5));
     }
 
     if (isNaN(result)) {
@@ -129,7 +129,7 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
-    
+    result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum + ' ' + this.spellOutUnit(returnUnit);
     return result;
   };
   
